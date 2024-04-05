@@ -5,21 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: rgb(0, 0, 0); color: white;">
+    <a href="/">Página Inicial</a>
     <h1>Receitas da Palmirinha!</h1>
     <!-- Tags de Template -->
-    Endereço do {{ Nome }} <br>
-    {{ Endereco }}, {{ Bairro }} - {{ Cidade }} - {{ Estado }}
-
-    <div>
-        Ingredientes:
-        <ul>
-            {% for ing in Ingredientes %}
-            <li>{{ ing }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    
+    <ul>
+        {% for receita in receitas  %}
+            <li><a href="/receita/{{ receita.id }}">{{ receita.nome }} </a> ({{ receita.grau_de_dificuldade }})</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
